@@ -26,22 +26,31 @@ const fromEuroToDollar = function(valueInEuro){
 
 module.exports = { sum, fromEuroToDollar }
 
-// declaramos una funcion con el mismo nombre "formEuroToDollar"
+let oneDollarIs = {
+    "JPY": 106.6, //japan yen
+    "EUR": 0.83, //Euro
+    "GBP": 0.67, // british pound
+}
+
 const fromDollarToYen = function(valueInDollar){
-    // convertimos el valor a dolares
-    let valueInDollar = valueInEuro * 1.2;
-    // retornamos el valor
-    return valueInDollar;
+    let valueInYen = valueInDollar * 106.6;
+
+    return valueInYen
 }
 
-module.exports = { sum, fromEuroToDollar }
+module.exports = { sum, fromEuroToDollar, fromDollarToYen }
 
-// declaramos una funcion con el mismo nombre "formEuroToDollar"
-const fromYenToPound = function(valueInEuro){
-    // convertimos el valor a dolares
-    let valueInDollar = valueInEuro * 1.2;
-    // retornamos el valor
-    return valueInDollar;
+let onePoundIs = {
+    "JPY": 159.8, //japan yen
+    "EUR": 1.25, //Euro
+    "USD": 1.5, //us dollar
 }
 
-module.exports = { sum, fromEuroToDollar }
+const fromYenToPound = function(valueInYen){
+    let valueinPound = valueInYen / 159.8;
+
+    return valueinPound
+    
+}
+
+module.exports = { sum, fromEuroToDollar, fromDollarToYen, fromYenToPound }
